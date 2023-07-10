@@ -57,10 +57,10 @@ function App() {
         <Route path={"/view/teacher/:id"}>
           <ViewTeacher teacher={teacher} setTeacher={setTeacher} />
         </Route>
-
+{/* 
         <Route path={"**"}>
           <NoPage/>
-        </Route>
+        </Route> */}
       </Switch>
     </div>
   );
