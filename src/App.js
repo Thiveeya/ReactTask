@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import Teachers_Page from './components/teachers/teachers';
 import AddTeacher from './components/teachers/addteacher';
 import { useState } from 'react';
-import { studentData, teacherData } from './data/data';
+import { studentData, teacherData } from './data/data.js';
 import NoPage from './components/NoPage';
 import Students_Page from './components/student/student';
 import AddNewStudent from './components/student/addstudent';
