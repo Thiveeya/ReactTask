@@ -1,0 +1,44 @@
+[
+    {
+        "id" : "100",
+        "name" : "Arun",
+        "std" : "10",
+        "mark" : "72%",
+        "attendance" : "86%"
+    },
+    {
+        "id" : "101",
+        "name" : "Akash",
+        "std" : "11",
+        "mark" : "76%",
+        "attendance" : "81%"
+    },
+    {
+        "id" : "102",
+        "name" : "Hariharan",
+        "std" : "12",
+        "mark" : "90%",
+        "attendance" : "94%"
+    },
+    {
+        "id" : "103",
+        "name" : "Shahul",
+        "std" : "9",
+        "mark" : "84%",
+        "attendance" : "88%"
+    },
+    {
+        "id" : "104",
+        "name" : "Manikandan",
+        "std" : "8",
+        "mark" : "72%",
+        "attendance" : "95%"
+    },
+    {
+        "id" : "105",
+        "name" : "Preethi",
+        "std" : "10",
+        "mark" : "82%",
+        "attendance" : "91%"
+    }
+]

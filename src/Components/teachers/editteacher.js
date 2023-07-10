@@ -24,7 +24,9 @@ export default function EditTeacher({teacher,setTeacher}){
         setSubject(selectTeacher.subject)
         setContact(selectTeacher.contact)
         setPerformance(selectTeacher.performance)
-    },[])
+    },[]) 
+    
+    // eslint-disable-line react-hooks/exhaustive-deps
     
     const updateTeacher = ()=>{
         const editIndex = teacher&&(teacher?.findIndex(per=>per.id===id));
@@ -49,9 +51,9 @@ export default function EditTeacher({teacher,setTeacher}){
         <div className="add-label">
                 <TextField id="outlined-basic" onChange={(e)=>setId(e.target.value)} type="text" value={idx} label="Id" variant="outlined" />
                 <TextField id="outlined-basic" onChange={(e)=>setName(e.target.value)} type="text" value={name} label="Name" variant="outlined" />
-                <TextField id="outlined-basic" onChange={(e)=>setSubject(e.target.value)} type="text" value={subject} label="Class" variant="outlined" />
-                <TextField id="outlined-basic" onChange={(e)=>setContact(e.target.value)} type="text" value={contact} label="Marks" variant="outlined" />
-                <TextField id="outlined-basic" onChange={(e)=>setPerformance(e.target.value)} type="text" value={performance} label="Attendance" variant="outlined" />
+                <TextField id="outlined-basic" onChange={(e)=>setSubject(e.target.value)} type="text" value={subject} label="Subject" variant="outlined" />
+                <TextField id="outlined-basic" onChange={(e)=>setContact(e.target.value)} type="text" value={contact} label="contact" variant="outlined" />
+                <TextField id="outlined-basic" onChange={(e)=>setPerformance(e.target.value)} type="text" value={performance} label="performance" variant="outlined" />
                 <Button onClick={updateTeacher}>Submit</Button>
             </div>
         </BaseDefault>
