@@ -1,5 +1,5 @@
 import React from "react";
-import BaseDefault from "../core/Base";
+import BaseDefault from "../../core/Base";
 
 
 export default function UserDetails(){

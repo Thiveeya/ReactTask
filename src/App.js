@@ -13,7 +13,7 @@ import EditUser from './components/student/editStudent';
 import EditTeacher from './components/teachers/editteacher';
 import ViewStudent from './components/student/viewstudents';
 import ViewTeacher from './components/teachers/viewteacher';
-import UserDetails from './components/User';
+import UserDetails from './components/UserDetails/User';
 
 function App() {
   const [teacher,setTeacher] = useState(teacherData);
