@@ -1,36 +1,19 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 
-export default function BaseApp({ title, children }) {
-  const history = useHistory();
-  return (
-    <div>
-      <div>
-        <div className="nav-styles">
-          <span>
-            <button
-              className="nav-buttons"
-              onClick={() => history.push("/add/user")}
-            >
-              Add User
-            </button>
-          </span>
-          <span>
-            <button className="nav-buttons" onClick={() => history.push("/")}>
-              Dashboard
-            </button>
-          </span>
-        </div>
-        <div className="title">{title}</div>
-      </div>
-
-      <div className="childred">
-        {children}
-        <footer>
-          contact us
-          <div>email : zenfsd@guvi.in</div>
-        </footer>
-      </div>
-    </div>
-  );
+export default function BaseDefault({title,styles,children}){
+    const history = useHistory();
+    return(
+        <>
+        
+            <div className="navbar">
+                <Button onClick={()=>history.push("/")} variant="danger">Home</Button>
+                <Button onClick={()=>history.push("/students")} variant="danger">Student</Button>
+                <Button onClick={()=>history.push("/teacher")} variant="danger">Teacher</Button>
+            </div>
+            <div className={styles}>{title}</div>
+            <div className="main-body">{children}</div>
+        </>
+    )
 }

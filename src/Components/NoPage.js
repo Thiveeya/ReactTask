@@ -1,12 +1,10 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 
-export function Nopage() {
-  const history = useHistory();
-  return (
-    <div>
-      <h1>Hi you entered wrong place 404</h1>
-      <button onClick={() => history.push("/")}>Dashboard</button>
-    </div>
-  );
+export default function NoPage(){
+    return(
+        <div className="no-page">
+            <h3>Error Back to Home page</h3>
+            <a href="/">back to safely</a>
+        </div>
+    )
 }
