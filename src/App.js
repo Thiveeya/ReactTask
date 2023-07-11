@@ -1,61 +1,110 @@
-/* eslint-disable react/jsx-pascal-case */
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import { Route, Switch } from 'react-router-dom';
-import Teachers_Page from './components/teacher/teachers';
-import AddTeacher from './components/teacher/addteacher';
-import { useState } from 'react';
-import { studentData, teacherData } from './data/datas';
+import "./App.css";
+import { Route, Switch } from "react-router-dom";
+import { Library } from "./Library";
+import { Home } from "./Home";
 
-import Students_Page from './components/student/student';
-import AddNewStudent from './components/student/addstudent';
-import EditUser from './components/student/editStudent';
-import EditTeacher from './components/teacher/editteacher';
-import ViewStudent from './components/student/viewstudents';
-import ViewTeacher from './components/teacher/viewteacher';
-import UserDetails from './components/UserDetails/User';
+import { Economics } from "./Economics";
+import { History } from "./History";
+import { Science } from "./Science";
+import { Geography } from "./Geography";
+
+import { useState } from "react";
+
+import { historydata } from "./historydata";
+import { scidata } from "./scidata";
+import { geodata } from "./geodata";
+import { ecodata } from "./ecodata";
+
+import { Scienceview } from "./Scienceview";
+import { Hisview } from "./Hisview";
+import { Geoview } from "./Geoview";
+import { Ecoview } from "./Ecoview";
+
+import { Ecoadd } from "./Ecoadd";
+import { Geoadd } from "./Geoadd";
+import { Hisadd } from "./Hisadd";
+import { Scienceadd } from "./Scienceadd";
+
+import { Hisedit } from "./Hisedit";
+import { Ecoedit } from "./Ecoedit";
+import { Geoedit } from "./Geoedit";
+import { Scienceedit } from "./Scienceedit";
+
 
 function App() {
-  const [teacher,setTeacher] = useState(teacherData);
-  const [student,setStudent] = useState(studentData);
+  
+  
+  const[his,setHis]=useState(historydata);
+  const[science,setScience]=useState(scidata);
+  const[geo,setGeo]=useState(geodata);
+  const[eco,setEco]=useState(ecodata);
 
   return (
     <div className="App">
       <Switch>
-        <Route exact path={"/"}>
-          <UserDetails/>
+        <Route exact path="/">
+          <Home/>
+          </Route>
+        <Route path="/library">
+          <Library />
+        </Route>
+        
+        <Route path="/history">
+          <History his={his} setHistory={setHis}/>
+        </Route>
+        <Route path="/science">
+          <Science science={science} setScience={setScience} />
+        </Route>
+        <Route path="/geography">
+          <Geography geo={geo} setGeo={setGeo}/>
+        </Route>
+        <Route path="/economics">
+          <Economics eco={eco} setEco={setEco}/>
         </Route>
 
-        <Route path={"/students"}>
-          <Students_Page student={student} setStudent={setStudent} />
+
+
+        <Route path="/ecoedit/:id">
+          <Ecoedit eco={eco} setEco={setEco}/>
+        </Route>
+        <Route path="/ecoview/:id">
+          <Ecoview eco={eco} setEco={setEco}/>
+        </Route>
+        <Route path="/ecoadd">
+          <Ecoadd eco={eco} setEco={setEco}/>
         </Route>
 
-        <Route path={"/addstudent"}>
-          <AddNewStudent student={student} setStudent={setStudent} />
+
+        <Route path="/geoadd">
+        <Geoadd geo={geo} setGeo={setGeo}/>
+        </Route>
+        <Route path="/geoedit/:id">
+        <Geoedit geo={geo} setGeo={setGeo}/>
+        </Route>
+        <Route path="/geoview/:id">
+        <Geoview geo={geo} setGeo={setGeo}/>
         </Route>
 
-        <Route path={"/editstudent/:id"}>
-          <EditUser student={student} setStudent={setStudent} />
+
+        <Route path="/hisview/:id">
+        <Hisview his={his} setHis={setHis}/>
+        </Route>
+        <Route path="/hisedit/:id">
+        <Hisedit his={his} setHis={setHis}/>
+        </Route>
+        <Route path="/hisadd">
+        <Hisadd his={his} setHis={setHis}/>
         </Route>
 
-        <Route path={"/view/student/:id"}>
-          <ViewStudent student={student} setStudent={setStudent} />
-        </Route>
 
-        <Route path={"/teacher"}>
-          <Teachers_Page teacher={teacher} setTeacher={setTeacher} />
+        <Route path="/scienceadd">
+        <Scienceadd science={science} setScience={setScience} />
         </Route>
-
-        <Route path={"/addteacher"}>
-          <AddTeacher teacher={teacher} setTeacher={setTeacher} />
+        <Route path="/scienceedit/:id">
+        <Scienceedit science={science} setScience={setScience} />
         </Route>
-
-        <Route path={"/edit/teacher/:id"}>
-          <EditTeacher teacher={teacher} setTeacher={setTeacher} />
-        </Route>
-
-        <Route path={"/view/teacher/:id"}>
-          <ViewTeacher teacher={teacher} setTeacher={setTeacher} />
+        <Route path="/scienceview/:id">
+        <Scienceview science={science} setScience={setScience} />
         </Route>
 
       </Switch>
@@ -64,3 +113,6 @@ function App() {
 }
 
 export default App;
+
+
+
