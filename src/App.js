@@ -2,18 +2,18 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
-import Teachers_Page from './components/teacher/teachers';
-import AddTeacher from './components/teacher/addteacher';
+import Teachers_Page from './components/teachers/teachers';
+import AddTeacher from './components/teachers/addteacher';
 import { useState } from 'react';
 import { studentData, teacherData } from './data/datas';
-
+import NoPage from './components/NoPage';
 import Students_Page from './components/student/student';
 import AddNewStudent from './components/student/addstudent';
 import EditUser from './components/student/editStudent';
-import EditTeacher from './components/teacher/editteacher';
+import EditTeacher from './components/teachers/editteacher';
 import ViewStudent from './components/student/viewstudents';
-import ViewTeacher from './components/teacher/viewteacher';
-import UserDetails from './components/UserDetails/User';
+import ViewTeacher from './components/teachers/viewteacher';
+import UserDetails from './components/User';
 
 function App() {
   const [teacher,setTeacher] = useState(teacherData);
@@ -58,6 +58,9 @@ function App() {
           <ViewTeacher teacher={teacher} setTeacher={setTeacher} />
         </Route>
 
+        <Route path={"**"}>
+          <NoPage/>
+        </Route>
       </Switch>
     </div>
   );

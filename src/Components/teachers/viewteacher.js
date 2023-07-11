@@ -3,7 +3,7 @@ import BaseDefault from "../../core/Base";
 import { useHistory, useParams } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
-export default function ViewTeacher({teacher,setTeacher}){
+export default function ViewTeacher({teacher}){
     const {id} = useParams();
     const user = teacher[id];
     const history = useHistory();

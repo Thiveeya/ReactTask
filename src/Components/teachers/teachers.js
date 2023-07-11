@@ -8,7 +8,7 @@ export default function Teachers_Page({teacher,setTeacher}){
     
     // Delete Teacher Details Function 
     const deleteTeacher = (idx) =>{
-        const alterList = teacher.filter((data) => data.id !==idx);
+        const alterList = teacher.filter((data) => data.id !=idx);
         setTeacher(alterList);
     }
 
